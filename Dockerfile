@@ -1,6 +1,8 @@
 #FROM registry.access.redhat.com/jboss-webserver-3/webserver31-tomcat7-openshift
 #FROM registry.redhat.io/jboss-webserver-3/webserver31-tomcat7-openshift
-FROM registry.redhat.io/jboss-webserver-3/webserver31-tomcat7-openshift
+#FROM registry.redhat.io/jboss-webserver-3/webserver31-tomcat7-openshift
+FROM registry.wspark.com/jboss-webserver-5/webserver52-openjdk11-tomcat9-openshift-rhel7:latest
+
 #FROM tomcat7-base:latest
     
 USER root
