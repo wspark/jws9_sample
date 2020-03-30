@@ -16,7 +16,7 @@ USER root
   
   
 ARG TOMCAT_PATH=/opt/jws-5.2/tomcat
-RUN rm -rf ${TOMCAT_PATH}/conf/server.xml
+#RUN rm -rf ${TOMCAT_PATH}/conf/server.xml
 #RUN rm -rf ${TOMCAT_PATH}/conf/catalina.properties
 #RUN rm -rf ${TOMCAT_PATH}/conf/web.xml
 #ARG TOMCAT_PATH=/usr/local/tomcat/apache-tomcat-7.0.62
