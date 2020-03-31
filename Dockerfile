@@ -30,11 +30,11 @@ ARG TOMCAT_PATH=/opt/jws-5.2/tomcat
 #COPY web.xml ${TOMCAT_PATH}/conf/
 
 # for valut
-#COPY files/vault/tomcat-vault.jar ${TOMCAT_PATH}/lib/
+COPY files/vault/tomcat-vault.jar ${TOMCAT_PATH}/lib/
 #COPY files/vault/catalina.properties ${TOMCAT_PATH}/conf/
-#COPY files/vault/vault.properties ${TOMCAT_PATH}/conf/
-#COPY files/vault/crm.keystore ${TOMCAT_PATH}/conf/
-#COPY files/vault/VAULT.dat ${TOMCAT_PATH}/conf/
+COPY files/vault/vault.properties ${TOMCAT_PATH}/conf/
+COPY files/vault/crm.keystore ${TOMCAT_PATH}/conf/
+COPY files/vault/VAULT.dat ${TOMCAT_PATH}/conf/
 
 
 
