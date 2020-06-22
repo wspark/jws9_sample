@@ -11,9 +11,6 @@ USER root
 
 # RUN yum -y update \
 # RUN yum -y install openssh-clients.x86_64 
- 
- 
-  
   
 ARG TOMCAT_PATH=/opt/jws-5.2/tomcat
 #RUN rm -rf ${TOMCAT_PATH}/conf/server.xml
@@ -51,5 +48,18 @@ ADD files/webapps/simple ${TOMCAT_PATH}/webapps/simple
 USER 185
   
 EXPOSE 8080
+
+# Install Language
+RUN apt-get update \
+  && apt-get install --reinstall -y locales \
+  && sed -i 's/# ko_KR.UTF-8 UTF-8/ko_KR.UTF-8 UTF-8/' /etc/locale.gen \
+  && locale-gen ko_KR.UTF-8 \
+  && apt-get clean
+  
+ENV LANG ko_KR.UTF-8
+ENV LANGUAGE ko_KR
+ENV LC_ALL ko_KR.UTF-8
+  
+RUN dpkg-reconfigure --frontend noninteractive locales
    
 #ENTRYPOINT ["catalina.sh", "run"]
